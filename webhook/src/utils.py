@@ -2,12 +2,10 @@ import base64
 from datetime import date
 from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import serialization, hashes
-import logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 import pika
 from models import PersonEvent
 from database import async_session
+from logging import log
 
 def load_private_key():
     """
@@ -22,15 +20,6 @@ def load_private_key():
             password=None,
         )
     return private_key
-
-def log(message: any):
-    """
-    Loga uma mensagem no nível de informação.
-
-    Args:
-        message (any): A mensagem a ser logada.
-    """
-    logger.info(message)
 
 def load_public_key():
     """

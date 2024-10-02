@@ -1,7 +1,7 @@
 import base64
 from cryptography.hazmat.primitives.asymmetric import padding
 from cryptography.hazmat.primitives import hashes
-from utils import load_public_key, log
+from utils import load_public_key
 
 """
 Carrega a chave pública do sistema.
