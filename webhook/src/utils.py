@@ -14,7 +14,7 @@ def load_private_key():
     Returns:
         private_key: A chave privada carregada do arquivo.
     """
-    with open("./app/src/private_key.pem", "rb") as key_file:
+    with open("./webhook/src/private_key.pem", "rb") as key_file:
         private_key = serialization.load_pem_private_key(
             key_file.read(),
             password=None,
@@ -28,7 +28,7 @@ def load_public_key():
     Returns:
         public_key: A chave pública carregada do arquivo.
     """
-    with open("./app/src/public_key.pem", "rb") as key_file:
+    with open("./webhook/src/public_key.pem", "rb") as key_file:
         public_key = serialization.load_pem_public_key(key_file.read())
     return public_key
 
